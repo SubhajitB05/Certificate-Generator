@@ -6,7 +6,11 @@ import { handleGenerateCertificate } from '../controllers/admin.controller.js';
 
 const router = express.Router();
 
-
+router.get('/', (req, res)=>{
+  return res.status(200).json({
+    message: "Server running well",
+  })
+)
 router.post('/register', handleRegisterUser);
 router.post('/login', handleLoginUser);
 router.post('/generate-certificate', validateUser, isAdmin, handleGenerateCertificate);
