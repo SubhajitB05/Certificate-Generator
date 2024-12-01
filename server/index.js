@@ -5,6 +5,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import adminRoutes from './routes/admin.route.js';
 
+
 const app = express();
 
 const PORT = process.env.PORT || 8008;
@@ -12,13 +13,13 @@ const URI = process.env.MONGOURI;
 
 // Middlewares
 app.use(cors({
-    // origin: 'http://localhost:5173',
-    origin: 'https://asr-certificate-generator.vercel.app',
+    origin: ['https://asr-certificate-generator.vercel.app','http://localhost:5173'],
     methods:['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
     credentials: true
 }));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
+
 
 app.use('/', adminRoutes);
 

@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const generatedCertificateSchema = new mongoose.Schema({
-    userId:{
+    certificateId:{
         type: mongoose.Types.ObjectId,
         ref: 'User',
         required: true
