@@ -15,13 +15,11 @@ const URI = process.env.MONGOURI;
 app.use(cors({
     origin: ['https://asr-certificate-generator.vercel.app','http://localhost:5173'],
     methods:['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
-    credentials: true
+    credentials: true,
 }));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-
-app.use('/', adminRoutes);
 
 // Connect to MongoDB
 mongoose.connect(URI)
@@ -32,3 +30,6 @@ mongoose.connect(URI)
     })
 })
 .catch(()=>console.log("MongoDB Connection Failed"));
+
+// Routes
+app.use('/', adminRoutes);

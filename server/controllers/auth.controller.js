@@ -37,6 +37,7 @@ const handleRegisterUser = async (req, res) => {
 
 const handleLoginUser = async (req, res) => {
   try {
+    res.header('Access-Control-Allow-Origin', 'https://asr-certificate-generator.vercel.app');
     const { email, password } = req.body;
     const user = await User.findOne({ email });
     if (!user) {
