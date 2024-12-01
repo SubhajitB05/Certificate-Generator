@@ -13,7 +13,7 @@ const URI = process.env.MONGOURI;
 
 // Middlewares
 app.use(cors({
-    origin: ['https://asr-certificate-generator.vercel.app/','http://localhost:5173'],
+    origin: 'https://asr-certificate-generator.vercel.app',
     methods:['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
     credentials: true,
 }));
