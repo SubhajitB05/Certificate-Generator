@@ -8,7 +8,7 @@ import {upload} from '../middlewares/multer.middleware.js';
 const router = express.Router();
 
 router.get('/', (req, res)=>{
-    res.send('Welcome to the API');
+    res.send('Server working well');
 })
 router.post('/register', handleRegisterUser);
 router.post('/login', handleLoginUser);
